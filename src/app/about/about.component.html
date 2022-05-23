@@ -1,0 +1,11 @@
+<div class="block" *ngFor="let qu of q">
+    <h1>{{qu.qname}}</h1>
+    <div class="form-check" *ngFor="let op of qu.options">
+        <input class="form-check-input" [value]="op.opt_id" (change)="ansCol({q_id: qu.q_id,ans: op.opt_id})" type="radio" [name]="'flexRadioDefault'+qu.q_id" [id]="'flexRadioDefault1'+qu.q_id">
+        <label class="form-check-label" for="flexRadioDefault1">
+            {{op.opt}}
+        </label>
+    </div>
+
+</div>
+<button (click)="checkAnswers()">Check ANsw</button>
