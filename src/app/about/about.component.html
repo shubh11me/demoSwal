@@ -1,11 +1,21 @@
+<button (click)="startExam()">Start Exam</button>
 <div class="block" *ngFor="let qu of q">
     <h1>{{qu.qname}}</h1>
     <div class="form-check" *ngFor="let op of qu.options">
-        <input class="form-check-input" [value]="op.opt_id" (change)="ansCol({q_id: qu.q_id,ans: op.opt_id})" type="radio" [name]="'flexRadioDefault'+qu.q_id" [id]="'flexRadioDefault1'+qu.q_id">
+        <input class="form-check-input" [value]="op.opt_id" [checked]="containsObjectAns({q_id:qu.q_id,ans:op.opt_id}, this.answt[getAnsIN(currentMode,answt)])"  (change)="ansCol({q_id: qu.q_id,ans: op.opt_id})" type="radio" [name]="'flexRadioDefault'+qu.q_id" class="options" [id]="'flexRadioDefault1'+qu.q_id">
         <label class="form-check-label" for="flexRadioDefault1">
             {{op.opt}}
         </label>
     </div>
 
 </div>
-<button (click)="checkAnswers()">Check ANsw</button>
+<button (click)="examSubmitter()">Check ANsw</button>
+
+<h1>
+    <b>{{timer_mins}}:{{timer_secs}}</b>
+</h1>
+<!-- [checked]="containsObjectAns({q_id:qu.q_id,ans:op.opt_id}, this.ans)" -->
+
+<button (click)="switch('apti')">Switch test Apti</button>
+<button (click)="switch('java')">Switch test Java</button>
+<button (click)="switch('sql')">Switch test Sqli</button>

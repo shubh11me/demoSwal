@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">demo-swal</string>
+    <string name="title_activity_main">demo-swal</string>
+    <string name="package_name">com.demswal.app</string>
+    <string name="custom_url_scheme">com.demswal.app</string>
+</resources>

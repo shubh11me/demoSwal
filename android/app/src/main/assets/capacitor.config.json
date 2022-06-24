@@ -1,0 +1,6 @@
+{
+	"appId": "com.demswal.app",
+	"appName": "demo-swal",
+	"webDir": "dist/demoSwal",
+	"bundledWebRuntime": false
+}
